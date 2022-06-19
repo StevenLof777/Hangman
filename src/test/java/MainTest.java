@@ -16,8 +16,8 @@ class MainTest {
     }
     @Test
     void CheckIfWordIsRandmom() throws FileNotFoundException {
-        String word1 = Main.randomWord();
-        String word2 = Main.randomWord();
+        String word1 = RandomWord.randomWord();
+        String word2 = RandomWord.randomWord();
         assertNotEquals(word1, word2);
     }
     @Test
