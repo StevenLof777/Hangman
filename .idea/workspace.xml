@@ -1,18 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="85f7c74a-347b-4fab-94a3-4721c58f1f4c" name="Changes" comment="Print out hanged man based on wrong guesses">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lose-hangman.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Game.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/PrintHangman.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/RandomWord.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/restart-hangman.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/win-hangman.gif" afterDir="false" />
+    <list default="true" id="85f7c74a-347b-4fab-94a3-4721c58f1f4c" name="Changes" comment="Complete game and add README.md">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/lib.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Hangman.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/db.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/h1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/h2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/h3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/h4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/GUI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Player.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Update_db.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hangman.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Hangman.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Game.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/MainTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/MainTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/PrintHangman.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/PrintHangman.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/RandomWord.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/RandomWord.java" afterDir="false" />
     </list>
     <list id="1bfb8cd5-ec7d-42ab-acd4-ecc0ffe13d5c" name="score" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -49,21 +55,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "Downloaded.Files.Path.Enabled": "true",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "last_opened_file_path": "C:/Users/LofSt/Desktop/GenSpark Projects/Hangman/src"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;true&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Program Files (x86)/javafx-sdk-18.0.1/lib&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
-}]]></component>
+}</component>
   <component name="Push.Settings">
     <force-push-targets>
       <force-push-target remote-path="github" branch="main" />
@@ -71,8 +81,9 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\LofSt\Desktop\GenSpark Projects\Hangman\src\main" />
       <recent name="C:\Users\LofSt\Desktop\GenSpark Projects\Hangman\src\main\java" />
+      <recent name="C:\Users\LofSt\Desktop\GenSpark Projects\Hangman\src\main" />
+      <recent name="C:\Users\LofSt\Desktop\GenSpark Projects\Hangman\src" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
@@ -130,10 +141,10 @@
     </configuration>
     <list>
       <item itemvalue="Application.main" />
-      <item itemvalue="JUnit.MainTest.makeSureThatUserEntersYesOrNo" />
-      <item itemvalue="JUnit.MainTest.CheckIfWordIsRandmom" />
       <item itemvalue="JUnit.MainTest" />
       <item itemvalue="JUnit.MainTest.CheckForWords" />
+      <item itemvalue="JUnit.MainTest.CheckIfWordIsRandmom" />
+      <item itemvalue="JUnit.MainTest.makeSureThatUserEntersYesOrNo" />
     </list>
     <recent_temporary>
       <list>
@@ -251,15 +262,35 @@
     <MESSAGE value="Add print word state method that displays the characters as underscores if the user hasn't guessed the correct one" />
     <MESSAGE value="Add text document that contains all the words needed, make test that checks if the file exists" />
     <MESSAGE value="Print out hanged man based on wrong guesses" />
-    <option name="LAST_COMMIT_MESSAGE" value="Print out hanged man based on wrong guesses" />
+    <MESSAGE value="Complete mvp, add README.md" />
+    <MESSAGE value="Complete game and add README.md" />
+    <option name="LAST_COMMIT_MESSAGE" value="Complete game and add README.md" />
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Update_db.java</url>
+          <line>34</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Update_db.java</url>
+          <line>29</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <watches-manager>
       <configuration name="Application">
         <watch expression="answer" />
         <watch expression="underscore" language="JAVA" />
       </configuration>
     </watches-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Hangman$main.ic" NAME="main Coverage Results" MODIFIED="1655730678463" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />

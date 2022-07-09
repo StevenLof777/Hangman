@@ -1,0 +1,3 @@
+NAME: Bob | SCORE: 0
+NAME: Job | SCORE: 0
+NAME: Rob | SCORE: 0

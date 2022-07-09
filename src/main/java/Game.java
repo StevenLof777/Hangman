@@ -1,4 +1,4 @@
-import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.Scanner;
 
 public class Game {
@@ -7,7 +7,7 @@ public class Game {
     static {
         try {
             word = RandomWord.randomWord();
-        } catch (FileNotFoundException e) {
+        } catch (IOException e) {
             throw new RuntimeException(e);
         }
     }
@@ -15,15 +15,24 @@ public class Game {
     public static String underscore = new String(new char[word.length()]).replace("\0", "_");
     public static String missedLetters = "";
     public static int count = 0;
-    public static void play() throws FileNotFoundException {
+
+    public static void play() throws IOException {
+        Player p = new Player();
+
         word = RandomWord.randomWord();
         count = 0;
         missedLetters="";
         underscore = new String(new char[word.length()]).replace("\0", "_");
 
-//        System.out.println("word = " + word);
-        System.out.println("HANGMAN");
+        System.out.println("What is your name?");
 
+        Scanner sc = new Scanner(System.in);
+
+        p.setName(sc.next());
+
+        Update_db.update_db(p);
+
+        System.out.println("HANGMAN");
         Scanner sc = new Scanner(System.in);
 
         while (count <= 4 && underscore.contains("_")) {
@@ -35,13 +44,19 @@ public class Game {
         }
     }
 
-    public static void checkGuesses(String guess) throws FileNotFoundException {
+    public static void checkGuesses(String guess) throws IOException {
         if (missedLetters.contains(guess) || underscore.contains(guess)){
             count--;
             System.out.println("You have already tried that letter. Choose again.");
         }
-
         Scanner sc = new Scanner(System.in);
+//        String[] wordArr = word.split("");
+//        String newUnderscore ="";
+//
+//        Arrays.stream(wordArr)
+//                .filter();
+
+//        Pass a ternary operator and map letters to new string
         String newUnderscore = "";
         for (int i = 0; i < word.length(); i++) {
             if (word.charAt(i) == guess.charAt(0)) {
@@ -53,6 +68,7 @@ public class Game {
                 newUnderscore += "_";
             }
         }
+
 
         if (underscore.equals(newUnderscore)) {
             count++;
