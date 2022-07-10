@@ -1,3 +1,6 @@
-NAME: Bob | SCORE: 0
-NAME: Job | SCORE: 0
-NAME: Rob | SCORE: 0
+Luke,0
+Yoda,3
+Anakin,4
+Padme,0
+Bob,1
+Ben,2

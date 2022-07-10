@@ -2,6 +2,8 @@ import java.io.IOException;
 import java.util.Scanner;
 
 public class Game {
+    public static Player p = new Player();
+
     public static String word;
 
     static {
@@ -17,7 +19,7 @@ public class Game {
     public static int count = 0;
 
     public static void play() throws IOException {
-        Player p = new Player();
+
 
         word = RandomWord.randomWord();
         count = 0;
@@ -33,18 +35,16 @@ public class Game {
         Update_db.update_db(p);
 
         System.out.println("HANGMAN");
-        Scanner sc = new Scanner(System.in);
-
         while (count <= 4 && underscore.contains("_")) {
             PrintHangman.hangmanImage(count);
             System.out.println(underscore);
             System.out.println("Guess a letter.");
             String guess = sc.next();
-            checkGuesses(guess);
+            checkGuesses(guess, p);
         }
     }
 
-    public static void checkGuesses(String guess) throws IOException {
+    public static void checkGuesses(String guess, Player p) throws IOException {
         if (missedLetters.contains(guess) || underscore.contains(guess)){
             count--;
             System.out.println("You have already tried that letter. Choose again.");
@@ -90,6 +90,8 @@ public class Game {
         }
 
         if (underscore.equals(word)) {
+            p.incrementScore();
+            Update_db.update_db(p);
             System.out.println("Yes! The secret word is " + Game.word + "! You have won!");
             System.out.println("Do you want to play again? (yes / no)");
             String input = sc.nextLine();

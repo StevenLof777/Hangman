@@ -1,39 +1,44 @@
 import java.io.*;
-import java.util.ArrayList;
-import java.util.HashMap;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.util.*;
+import java.util.stream.Stream;
 public class Update_db {
-//    public static void update_db(Player p) {
-//        try {
-////            BufferedWriter bw = new BufferedWriter(new FileWriter("src/main/db.txt", true));
-////            bw.append("NAME: " + p.getName() + " | SCORE: " + p.getScore());
-////            bw.append("\n");
-////            bw.close();
-//            RandomAccessFile writer = new RandomAccessFile("src/main/db.txt", "rw");
-//            writer.seek(0);
-//            writer.writeBytes(" Clarence ");
-//            writer.close();
-//        } catch (Exception e){
-//            System.out.println(e.getMessage());;
-//        }
-//
-//    }
-    public static File file = new File("src/main/hangman_words.txt");
+    public static void update_db(Player p) {
 
-    public static void update_db(Player obj) throws IOException {
-        try (FileOutputStream fos = new FileOutputStream(file);
-             ObjectOutputStream oos = new ObjectOutputStream(fos)) {
-            oos.writeObject(obj);
-            oos.flush();
+        HashMap<String, Integer> map = new HashMap<>();
+        LinkedHashMap<String, Integer> sortedMap = new LinkedHashMap<>();
+
+        try {
+            Stream.of(Files.readAllLines(Path.of("src/main/db.txt")))
+                    .flatMap(List::stream)
+                    .map(line -> new String[]{
+                            line.split(",")[0],
+                            line.split(",")[1]
+                    })
+                    .forEach(line -> {
+                        map.put(line[0], Integer.valueOf(line[1]));
+                        if (map.containsKey(p.getName())) map.put(p.getName(),  map.get(p.getName()) + p.getScore());
+                        else map.put(p.getName(), 0);
+//                        if (!map.containsKey(p.getName())) map.put(p.getName(),  p.getScore());
+//                        else map.put(p.getName(), Integer.parseInt(line[1]));
+                    });
+
+//            Sort Map
+            map.entrySet()
+                    .stream()
+                    .sorted(Map.Entry.comparingByValue())
+                    .forEachOrdered(x -> sortedMap.put(x.getKey(), x.getValue()));
+
+//            Write map to db text file
+            Files.write(Path.of("src/main/db.txt"), () -> sortedMap.entrySet().stream()
+                    .<CharSequence>map(e -> e.getKey() + ',' + e.getValue())
+                    .iterator());
+
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
-    // Deserialization
-    // Get object from a file.
-//    public static Person readObjectFromFile(File file) throws IOException, ClassNotFoundException {
-//        Person result = null;
-//        try (FileInputStream fis = new FileInputStream(file);
-//             ObjectInputStream ois = new ObjectInputStream(fis)) {
-//            result = (Person) ois.readObject();
-//        }
-//        return result;
-//    }
-}
+
+    }
+

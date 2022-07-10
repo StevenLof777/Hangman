@@ -2,23 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="85f7c74a-347b-4fab-94a3-4721c58f1f4c" name="Changes" comment="Complete game and add README.md">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/lib.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Hangman.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/db.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/h1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/h2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/h3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/h4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/GUI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Player.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Update_db.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hangman.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Hangman.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/db.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/db.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/GUI.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/PrintHangman.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/PrintHangman.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/RandomWord.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/RandomWord.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Update_db.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Update_db.java" afterDir="false" />
     </list>
     <list id="1bfb8cd5-ec7d-42ab-acd4-ecc0ffe13d5c" name="score" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -269,16 +258,10 @@
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/Update_db.java</url>
-          <line>34</line>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/Update_db.java</url>
-          <line>29</line>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.ArrayIndexOutOfBoundsException" package="java.lang" />
+          <option name="timeStamp" value="7" />
+        </breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <watches-manager>
